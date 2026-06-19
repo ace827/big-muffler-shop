@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Muffler Shop — Exhaust, Brakes & Auto Repair in Dayton, OH</title>
+<meta name="description" content="Big Muffler Shop in Dayton, OH. Serving drivers since 1976 with honest pricing on exhaust, mufflers, brakes, suspension and most auto repairs. Call (937) 222-6006.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161210; --ink2:#1f1917; --ink3:#2a2220;
+  --orange:#e05c1a; --orange2:#f97316; --orange3:#c44d12;
+  --off:#faf8f5; --warm:#f0ede8; --border:#e5e0d8;
+  --mid:#9c9188; --dark:#3d3530; --card:#f5f2ee; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Raleway',sans-serif;line-height:1.1}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-weight:700;font-size:15px;padding:14px 26px;border-radius:8px;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;letter-spacing:.3px}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(224,92,26,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(224,92,26,.45)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-2px);background:var(--ink2)}
+.icon{width:24px;height:24px;flex-shrink:0}
+
+/* topbar */
+.topbar{background:var(--ink);color:#cbc3ba;font-size:13.5px}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:9px;padding-bottom:9px;gap:16px;flex-wrap:wrap}
+.topbar .meta{display:flex;gap:22px;flex-wrap:wrap}
+.topbar .meta span{display:inline-flex;align-items:center;gap:7px}
+.topbar .meta svg{width:15px;height:15px;color:var(--orange2)}
+.topbar a.tel{color:#fff;font-weight:600;display:inline-flex;align-items:center;gap:7px}
+.topbar a.tel svg{width:15px;height:15px;color:var(--orange2)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo svg{width:26px;height:26px;color:var(--orange2)}
+.brand-txt b{font-family:'Raleway',sans-serif;font-weight:900;font-size:19px;letter-spacing:.5px;display:block;line-height:1}
+.brand-txt span{font-size:12px;color:var(--mid);letter-spacing:1px;text-transform:uppercase}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{font-weight:500;font-size:15px;color:var(--dark);transition:color .2s}
+.navlinks a:hover{color:var(--orange)}
+.nav-cta{display:flex;align-items:center;gap:16px}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--ink)}
+.menu-btn svg{width:30px;height:30px}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=85') center/cover;transform:scale(1.05)}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(22,18,16,.94) 0%,rgba(22,18,16,.82) 42%,rgba(22,18,16,.45) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr .9fr;gap:50px;align-items:center;padding-top:60px;padding-bottom:60px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(224,92,26,.18);border:1px solid rgba(224,92,26,.5);color:#ffb98a;padding:7px 16px;border-radius:30px;font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:22px}
+.hero .eyebrow svg{width:15px;height:15px;color:var(--orange2)}
+.hero h1{font-size:clamp(38px,5.4vw,68px);font-weight:900;letter-spacing:-1px;margin-bottom:20px}
+.hero h1 em{color:var(--orange2);font-style:normal}
+.hero p.sub{font-size:19px;color:#ddd4cc;max-width:560px;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:30px;backdrop-filter:blur(8px)}
+.hero-card h3{font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--orange2);margin-bottom:18px}
+.hero-card .row{display:flex;align-items:flex-start;gap:13px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.hero-card .row:last-child{border-bottom:none}
+.hero-card .row svg{width:20px;height:20px;color:var(--orange2);margin-top:3px}
+.hero-card .row b{display:block;font-family:'Raleway';font-weight:700;font-size:15.5px}
+.hero-card .row small{color:#c3bab1;font-size:13.5px}
+
+/* stats */
+.stats{background:var(--orange);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:42px;padding-bottom:42px}
+.stat{text-align:center}
+.stat .num{font-family:'Raleway';font-weight:900;font-size:44px;line-height:1;display:flex;justify-content:center;align-items:center;gap:6px}
+.stat .num svg{width:30px;height:30px;color:#ffe1cf}
+.stat .lbl{font-size:14px;margin-top:8px;letter-spacing:.4px;opacity:.95}
+
+/* section base */
+section.pad{padding:88px 0}
+.shead{text-align:center;max-width:680px;margin:0 auto 56px}
+.shead .tag{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+.shead h2{font-size:clamp(30px,4vw,46px);font-weight:800;margin:12px 0 16px;letter-spacing:-.5px}
+.shead p{color:var(--mid);font-size:17px}
+
+/* how */
+.how{background:var(--off)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px 26px;position:relative;transition:transform .25s,box-shadow .25s}
+.step:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.step .n{font-family:'Raleway';font-weight:900;font-size:54px;color:var(--warm);line-height:1;position:absolute;top:18px;right:22px}
+.step .ic{width:54px;height:54px;background:var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.step .ic svg{width:28px;height:28px;color:var(--orange2)}
+.step h3{font-size:20px;font-weight:700;margin-bottom:9px}
+.step p{color:var(--mid);font-size:14.5px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc{border:1px solid var(--border);border-radius:14px;padding:32px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.09);border-color:var(--orange)}
+.svc .ic{width:58px;height:58px;background:linear-gradient(135deg,var(--orange),var(--orange3));border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(224,92,26,.3)}
+.svc .ic svg{width:30px;height:30px;color:#fff}
+.svc h3{font-size:21px;font-weight:700;margin-bottom:10px}
+.svc>p{color:var(--mid);font-size:14.5px;margin-bottom:16px}
+.svc ul{list-style:none}
+.svc li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--dark);padding:5px 0}
+.svc li svg{width:16px;height:16px;color:var(--orange);flex-shrink:0}
+
+/* why */
+.why{background:var(--ink);color:#fff}
+.why .cmp{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px}
+.cmp .col{border-radius:16px;padding:38px}
+.cmp .bad{background:var(--ink3);border:1px solid #3a302c}
+.cmp .good{background:linear-gradient(150deg,var(--orange3),var(--orange));box-shadow:0 18px 50px rgba(224,92,26,.35)}
+.cmp h3{font-size:23px;font-weight:800;margin-bottom:22px;display:flex;align-items:center;gap:11px}
+.cmp h3 svg{width:26px;height:26px}
+.cmp .bad h3{color:#d8a99a}
+.cmp ul{list-style:none}
+.cmp li{display:flex;align-items:flex-start;gap:12px;padding:11px 0;font-size:15.5px;border-bottom:1px solid rgba(255,255,255,.1)}
+.cmp li:last-child{border-bottom:none}
+.cmp li svg{width:21px;height:21px;flex-shrink:0;margin-top:2px}
+.cmp .bad li{color:#bdb2a9}
+.cmp .bad li svg{color:#8a7d74}
+.cmp .good li svg{color:#fff}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.about-img{position:relative}
+.about-img img{border-radius:16px;width:100%;height:520px;object-fit:cover;box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.about-badge{position:absolute;bottom:-26px;left:-26px;background:var(--orange);color:#fff;border-radius:14px;padding:22px 28px;box-shadow:0 16px 40px rgba(224,92,26,.4)}
+.about-badge b{font-family:'Raleway';font-weight:900;font-size:40px;line-height:1;display:block}
+.about-badge span{font-size:13px;letter-spacing:.5px}
+.about h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;margin-bottom:18px;letter-spacing:-.5px}
+.about .tag{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+.about p{color:var(--dark);font-size:16px;margin-bottom:16px}
+.about ul{list-style:none;margin-top:22px}
+.about li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;font-size:15.5px}
+.about li svg{width:22px;height:22px;color:var(--orange);flex-shrink:0;margin-top:2px}
+
+/* reviews */
+.reviews{background:var(--ink2);color:#fff}
+.feat{background:linear-gradient(135deg,var(--ink3),var(--ink));border:1px solid #3a302c;border-radius:18px;padding:46px;text-align:center;max-width:840px;margin:0 auto 44px;position:relative}
+.feat .stars{display:flex;justify-content:center;gap:4px;margin-bottom:20px}
+.feat .stars svg{width:26px;height:26px;color:var(--orange2)}
+.feat blockquote{font-family:'Raleway';font-weight:600;font-size:25px;line-height:1.4;margin-bottom:18px}
+.feat cite{color:var(--orange2);font-style:normal;font-weight:600}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:var(--ink3);border:1px solid #3a302c;border-radius:14px;padding:28px}
+.rev .stars{display:flex;gap:3px;margin-bottom:14px}
+.rev .stars svg{width:17px;height:17px;color:var(--orange2)}
+.rev p{font-size:14.5px;color:#d4cbc2;margin-bottom:16px}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-family:'Raleway';font-weight:800;color:#fff;font-size:17px}
+.rev .who b{font-size:14.5px;display:block}
+.rev .who small{color:var(--mid);font-size:12.5px}
+
+/* faq */
+.faq{background:var(--off)}
+.acc{max-width:840px;margin:0 auto}
+.qa{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.qa button{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Raleway';font-weight:700;font-size:17px;color:var(--ink)}
+.qa button svg{width:22px;height:22px;color:var(--orange);transition:transform .3s;flex-shrink:0}
+.qa.open button svg{transform:rotate(180deg)}
+.qa .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.qa .ans p{padding:0 26px 24px;color:var(--mid);font-size:15.5px}
+
+/* area */
+.area .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.map-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 18px 44px rgba(0,0,0,.1);background:var(--warm);position:relative;min-height:380px}
+.map-card iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.hoods{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hood{background:#fff;border:1px solid var(--border);border-radius:11px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+.hood b{font-family:'Raleway';font-weight:600;font-size:15px}
+.hood span{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-size:13px;font-weight:600}
+.hood span svg{width:14px;height:14px}
+
+/* cta band */
+.ctaband{background:linear-gradient(120deg,var(--orange3),var(--orange));color:#fff;text-align:center}
+.ctaband .wrap{padding-top:70px;padding-bottom:70px}
+.ctaband h2{font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:14px}
+.ctaband p{font-size:18px;opacity:.95;margin-bottom:28px}
+.ctaband .bignum{font-family:'Raleway';font-weight:900;font-size:clamp(34px,6vw,58px);display:inline-flex;align-items:center;gap:14px;color:#fff}
+.ctaband .bignum svg{width:46px;height:46px}
+.ctaband small{display:block;margin-top:10px;opacity:.9;font-size:15px}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
+.hours-tbl{background:var(--ink);color:#fff;border-radius:16px;padding:38px}
+.hours-tbl h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.hours-tbl .sub{color:#bdb2a9;font-size:14.5px;margin-bottom:22px}
+.hours-tbl .hr{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px}
+.hours-tbl .hr:last-of-type{border-bottom:none}
+.hours-tbl .hr.today{color:var(--orange2);font-weight:700}
+.hours-tbl .hr span:first-child{color:#d4cbc2}
+.hours-tbl .hr.today span{color:var(--orange2)}
+.hours-tbl .addr{margin-top:24px;display:flex;align-items:flex-start;gap:11px;color:#d4cbc2;font-size:14.5px}
+.hours-tbl .addr svg{width:20px;height:20px;color:var(--orange2);flex-shrink:0;margin-top:2px}
+.form{background:#fff;border:1px solid var(--border);border-radius:16px;padding:38px;box-shadow:0 14px 40px rgba(0,0,0,.06)}
+.form h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.form>p{color:var(--mid);font-size:14.5px;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;color:var(--dark)}
+.field input,.field textarea{width:100%;border:1px solid var(--border);border-radius:9px;padding:13px 14px;font-family:'Inter';font-size:15px;background:var(--off);transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(224,92,26,.13)}
+.field textarea{resize:vertical;min-height:96px}
+.form .btn-primary{width:100%;justify-content:center;margin-top:6px}
+.form .note{text-align:center;color:var(--mid);font-size:12.5px;margin-top:12px}
+.form-ok{display:none;background:#f0f8ef;border:1px solid #bfe3ba;color:#2f6b27;border-radius:9px;padding:14px;font-size:14.5px;text-align:center;margin-top:14px}
+
+/* footer */
+footer{background:var(--ink);color:#a89e95;padding:64px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:42px}
+.foot-brand .brand{margin-bottom:16px}
+.foot-brand .brand-txt b{color:#fff}
+.foot-brand p{font-size:14.5px;max-width:300px}
+.foot-col h4{color:#fff;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:14.5px;padding:6px 0;color:#a89e95;transition:color .2s}
+.foot-col a:hover{color:var(--orange2)}
+.foot-bot{border-top:1px solid #2e2622;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13.5px}
+.foot-bot .rate{display:inline-flex;align-items:center;gap:7px;color:#cbc3ba}
+.foot-bot .rate svg{width:16px;height:16px;color:var(--orange2)}
+
+/* reveal anims */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rl{opacity:0;transform:translateX(-44px);transition:opacity .7s,transform .7s}
+.rr{opacity:0;transform:translateX(44px);transition:opacity .7s,transform .7s}
+.reveal.in,.rl.in,.rr.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* mobile menu */
+.mnav{display:none;position:fixed;inset:0;background:var(--ink);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.mnav.show{display:flex}
+.mnav a{color:#fff;font-family:'Raleway';font-weight:700;font-size:24px;padding:14px}
+.mnav .close{position:absolute;top:24px;right:24px;background:none;border:none;color:#fff;cursor:pointer}
+.mnav .close svg{width:34px;height:34px}
+
+@media(max-width:1024px){
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero-card{max-width:480px}
+  .svc-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:768px){
+  .navlinks,.nav-cta .btn{display:none}
+  .menu-btn{display:block}
+  .topbar .meta span:nth-child(2){display:none}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:30px}
+  .svc-grid,.rev-grid,.steps,.hoods{grid-template-columns:1fr}
+  .why .cmp,.about .grid,.area .grid,.contact .grid{grid-template-columns:1fr;gap:34px}
+  .about-img img{height:360px}
+  .about-badge{left:16px;bottom:-20px}
+  section.pad{padding:62px 0}
+  .feat{padding:30px 24px}
+  .feat blockquote{font-size:20px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-btns .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG SPRITE -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.784 1.401 8.171L12 18.896l-7.335 3.866 1.401-8.171L.132 9.211l8.2-1.193z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="i-oil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s5 6 5 10a5 5 0 0 1-10 0c0-4 5-10 5-10z"/></symbol>
+<symbol id="i-brake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/></symbol>
+<symbol id="i-engine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h2l2-2h4v2h3l2 2h2v4h-2v3H9v-3H7l-2-2z"/><line x1="9" y1="4" x2="13" y2="4"/></symbol>
+<symbol id="i-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="12" x2="14" y2="12"/><line x1="12" y1="10" x2="12" y2="14"/></symbol>
+<symbol id="i-inspect" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></symbol>
+<symbol id="i-tire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+</svg>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="meta">
+      <span><svg><use href="#i-pin"/></svg>829 N Keowee St, Dayton, OH 45404</span>
+      <span><svg><use href="#i-clock"/></svg>Mon–Fri 8–5 · Sat 8–3</span>
+    </div>
+    <a class="tel" href="tel:+19372226006"><svg><use href="#i-phone"/></svg>(937) 222-6006</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="logo"><svg><use href="#i-wrench"/></svg></span>
+      <span class="brand-txt"><b>BIG MUFFLER SHOP</b><span>Dayton, Ohio</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="tel:+19372226006"><svg><use href="#i-phone"/></svg>Call Now</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mnav" id="mnav">
+  <button class="close" id="mClose" aria-label="Close menu"><svg><use href="#i-x"/></svg></button>
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
+  <a href="#about">About</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="tel:+19372226006" style="margin-top:18px"><svg style="width:18px;height:18px"><use href="#i-phone"/></svg>(937) 222-6006</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-img"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><svg><use href="#i-shield"/></svg>Trusted in Dayton since 1976</span>
+      <h1>Honest Exhaust &amp; Auto Repair <em>Done Right.</em></h1>
+      <p class="sub">From a rumbling muffler to brakes, suspension and most everyday repairs — Big Muffler Shop gives you straight answers and fair pricing. No upsells, no surprises.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="tel:+19372226006"><svg><use href="#i-phone"/></svg>Call (937) 222-6006</a>
+        <a class="btn btn-ghost" href="#services">View Services<svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>Quick Info</h3>
+      <div class="row"><svg><use href="#i-pin"/></svg><div><b>829 N Keowee St</b><small>Dayton, OH 45404</small></div></div>
+      <div class="row"><svg><use href="#i-clock"/></svg><div><b>Open Today 8AM – 5PM</b><small>Sat 8–3 · Closed Sunday</small></div></div>
+      <div class="row"><svg><use href="#i-star"/></svg><div><b>4.4★ from 237 reviews</b><small>Decades of repeat customers</small></div></div>
+      <div class="row"><svg><use href="#i-wrench"/></svg><div><b>All Makes &amp; Models</b><small>Foreign &amp; domestic welcome</small></div></div>
+    </aside>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="num"><span data-count="4.4" data-dec="1">0</span><svg><use href="#i-star"/></svg></div><div class="lbl">Average Google Rating</div></div>
+    <div class="stat reveal d1"><div class="num"><span data-count="237">0</span>+</div><div class="lbl">Customer Reviews</div></div>
+    <div class="stat reveal d2"><div class="num"><span data-count="49">0</span>+</div><div class="lbl">Years in Business</div></div>
+    <div class="stat reveal d3"><div class="num">100%</div><div class="lbl">Honest, Up-Front Pricing</div></div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="pad how">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">Simple Process</div>
+      <h2>Getting Fixed Up Is Easy</h2>
+      <p>No runaround, no pressure. Here's exactly how a visit to Big Muffler Shop works.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><div class="ic"><svg><use href="#i-phone"/></svg></div><h3>Call or Stop In</h3><p>Give us a ring at (937) 222-6006 or drive over. Walk-ins are always welcome.</p></div>
+      <div class="step reveal d1"><div class="n">2</div><div class="ic"><svg><use href="#i-inspect"/></svg></div><h3>We Diagnose It</h3><p>We listen, look it over, and tell you exactly what's going on — in plain English.</p></div>
+      <div class="step reveal d2"><div class="n">3</div><div class="ic"><svg><use href="#i-check"/></svg></div><h3>You Approve the Quote</h3><p>We give you a fair price up front. Nothing happens until you say go.</p></div>
+      <div class="step reveal d3"><div class="n">4</div><div class="ic"><svg><use href="#i-bolt"/></svg></div><h3>Pick Up &amp; Go</h3><p>Most jobs are done same day. Quality work, back on the road fast.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">What We Do</div>
+      <h2>Full-Service Auto Repair</h2>
+      <p>We started with exhaust — and grew into a complete repair shop Dayton drivers count on.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg><use href="#i-bolt"/></svg></div><h3>Exhaust &amp; Mufflers</h3><p>Our specialty for nearly 50 years. Custom and replacement work done right.</p><ul><li><svg><use href="#i-check"/></svg>Muffler repair &amp; replacement</li><li><svg><use href="#i-check"/></svg>Custom exhaust &amp; pipe bending</li><li><svg><use href="#i-check"/></svg>Catalytic converters</li><li><svg><use href="#i-check"/></svg>Welding &amp; leak repair</li></ul></div>
+      <div class="svc reveal d1"><div class="ic"><svg><use href="#i-brake"/></svg></div><h3>Brake Service</h3><p>Squealing or soft pedal? We'll get you stopping safely again.</p><ul><li><svg><use href="#i-check"/></svg>Pads &amp; rotors</li><li><svg><use href="#i-check"/></svg>Brake lines &amp; fluid</li><li><svg><use href="#i-check"/></svg>Calipers &amp; hardware</li><li><svg><use href="#i-check"/></svg>Free brake inspection</li></ul></div>
+      <div class="svc reveal d2"><div class="ic"><svg><use href="#i-tire"/></svg></div><h3>Suspension &amp; Front End</h3><p>Smooth out the ride and keep your steering tight and true.</p><ul><li><svg><use href="#i-check"/></svg>Shocks &amp; struts</li><li><svg><use href="#i-check"/></svg>Ball joints &amp; tie rods</li><li><svg><use href="#i-check"/></svg>Front-end repair</li><li><svg><use href="#i-check"/></svg>Steering components</li></ul></div>
+      <div class="svc reveal"><div class="ic"><svg><use href="#i-engine"/></svg></div><h3>Engine &amp; Diagnostics</h3><p>Check-engine light on? We'll find the cause and fix the real problem.</p><ul><li><svg><use href="#i-check"/></svg>Computer diagnostics</li><li><svg><use href="#i-check"/></svg>Tune-ups</li><li><svg><use href="#i-check"/></svg>Belts &amp; hoses</li><li><svg><use href="#i-check"/></svg>Minor engine repair</li></ul></div>
+      <div class="svc reveal d1"><div class="ic"><svg><use href="#i-oil"/></svg></div><h3>Routine Maintenance</h3><p>Keep your car healthy with the regular service it needs.</p><ul><li><svg><use href="#i-check"/></svg>Oil &amp; filter changes</li><li><svg><use href="#i-check"/></svg>Fluid flushes</li><li><svg><use href="#i-check"/></svg>Filters &amp; wipers</li><li><svg><use href="#i-check"/></svg>Seasonal check-ups</li></ul></div>
+      <div class="svc reveal d2"><div class="ic"><svg><use href="#i-wrench"/></svg></div><h3>Most Minor Repairs</h3><p>From rattles to the odd jobs other shops pass on — just ask.</p><ul><li><svg><use href="#i-check"/></svg>General repair</li><li><svg><use href="#i-check"/></svg>Batteries &amp; electrical</li><li><svg><use href="#i-check"/></svg>Honest estimates</li><li><svg><use href="#i-check"/></svg>Foreign &amp; domestic</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="pad why" id="why">
+  <div class="wrap">
+    <div class="shead reveal" style="color:#fff">
+      <div class="tag">The Difference</div>
+      <h2 style="color:#fff">Why Drivers Skip the Chains</h2>
+      <p style="color:#bdb2a9">A neighborhood shop that's earned its reputation one honest repair at a time.</p>
+    </div>
+    <div class="cmp">
+      <div class="col bad rr">
+        <h3><svg><use href="#i-x"/></svg>Dealers &amp; Chains</h3>
+        <ul>
+          <li><svg><use href="#i-x"/></svg>Pushy upsells and "recommended" extras you don't need</li>
+          <li><svg><use href="#i-x"/></svg>Inflated labor rates and marked-up parts</li>
+          <li><svg><use href="#i-x"/></svg>Talk to a different service writer every time</li>
+          <li><svg><use href="#i-x"/></svg>Cars sit for days waiting on approval</li>
+          <li><svg><use href="#i-x"/></svg>You're a ticket number, not a neighbor</li>
+        </ul>
+      </div>
+      <div class="col good rl">
+        <h3><svg><use href="#i-check"/></svg>Big Muffler Shop</h3>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Straight answers — we fix what's actually wrong</li>
+          <li><svg><use href="#i-check"/></svg>Fair, up-front pricing with no surprises</li>
+          <li><svg><use href="#i-check"/></svg>The same trusted faces, repair after repair</li>
+          <li><svg><use href="#i-check"/></svg>Most jobs done same day</li>
+          <li><svg><use href="#i-check"/></svg>Locally owned and rooted in Dayton since 1976</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="pad about" id="about">
+  <div class="wrap">
+    <div class="grid">
+      <div class="about-img rl">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=85" alt="Mechanic at Big Muffler Shop">
+        <div class="about-badge"><b>1976</b><span>Serving Dayton<br>since day one</span></div>
+      </div>
+      <div class="rr">
+        <div class="tag">Our Story</div>
+        <h2>Nearly 50 Years of Doing Right by Dayton</h2>
+        <p>Big Muffler Shop opened its doors on N Keowee Street back in 1976 and quickly became the place Dayton drivers trust for exhaust work that lasts. What started as a muffler shop grew into a full-service repair garage handling brakes, suspension, front-end work and most everyday repairs.</p>
+        <p>In 2016, longtime hands Richard Deitz and Chris Kelty took over the business — keeping the same straight-shooting approach that built the shop's reputation in the first place. Customers come back year after year because the work is solid and the pricing is honest.</p>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Locally owned and operated for nearly five decades</li>
+          <li><svg><use href="#i-check"/></svg>Foreign and domestic — all makes and models</li>
+          <li><svg><use href="#i-check"/></svg>4.4-star rated across 237+ customer reviews</li>
+          <li><svg><use href="#i-check"/></svg>Known for fair prices and no unnecessary upsells</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad reviews" id="reviews">
+  <div class="wrap">
+    <div class="shead reveal" style="color:#fff">
+      <div class="tag">What Customers Say</div>
+      <h2 style="color:#fff">Trusted, One Repair at a Time</h2>
+      <p style="color:#bdb2a9">A 4.4-star reputation built on honest work over the years.</p>
+    </div>
+    <div class="feat reveal">
+      <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+      <blockquote>"Fast, fair, and honest. They told me exactly what my car needed and didn't try to sell me anything extra. Prices beat the big chains and the work was done the same day."</blockquote>
+      <cite>— A Dayton customer</cite>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Got my exhaust fixed for a fraction of what the dealer quoted. In and out the same morning. These guys know mufflers."</p><div class="who"><div class="av">M</div><div><b>Marcus T.</b><small>Exhaust repair</small></div></div></div>
+      <div class="rev reveal d1"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Honest shop — a rarity. They could've upsold me but instead told me what could wait. I won't take my car anywhere else."</p><div class="who"><div class="av">D</div><div><b>Denise R.</b><small>Brake service</small></div></div></div>
+      <div class="rev reveal d2"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Been coming here for years. Fair prices, friendly guys, and they always get it right the first time."</p><div class="who"><div class="av">J</div><div><b>James K.</b><small>Repeat customer</small></div></div></div>
+      <div class="rev reveal"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Quoted me a great price on a full exhaust job and stuck to it. No surprises on the bill. Highly recommend."</p><div class="who"><div class="av">S</div><div><b>Sandra P.</b><small>Custom exhaust</small></div></div></div>
+      <div class="rev reveal d1"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Friendly, fast, and reasonable. Diagnosed my front-end noise quickly and fixed it for less than I expected."</p><div class="who"><div class="av">R</div><div><b>Robert L.</b><small>Suspension work</small></div></div></div>
+      <div class="rev reveal d2"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p>"Great local shop. They treat you like a neighbor, not a number. Will be back for sure."</p><div class="who"><div class="av">T</div><div><b>Tina M.</b><small>General repair</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad faq" id="faq">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">Good to Know</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to the things Dayton drivers ask us most.</p>
+    </div>
+    <div class="acc">
+      <div class="qa reveal"><button>Do I need an appointment, or can I walk in?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>Walk-ins are always welcome. You're free to stop by during business hours, though a quick call to (937) 222-6006 ahead of time helps us plan around busy stretches and get you in and out faster.</p></div></div>
+      <div class="qa reveal"><button>What if I don't know what's wrong with my car?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>That's exactly what we're here for. Describe what you're hearing or feeling — a rattle, a squeal, a rough ride — and we'll diagnose it and explain the cause in plain English before any work begins.</p></div></div>
+      <div class="qa reveal"><button>Do you work on all car brands and models?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>Yes. We service foreign and domestic vehicles of all makes and models — cars, trucks and SUVs alike. From daily drivers to older vehicles, we've seen it all over nearly 50 years.</p></div></div>
+      <div class="qa reveal"><button>How long do repairs usually take?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>Most exhaust, brake and minor repairs are completed the same day. For bigger jobs or parts we need to order, we'll give you a realistic time frame up front so you can plan around it.</p></div></div>
+      <div class="qa reveal"><button>Will you call me before starting work or adding costs?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>Always. Owners Richard and Chris built this shop on no surprises — you'll get a clear quote before we begin, and we won't add a dime of extra work without calling you for approval first.</p></div></div>
+      <div class="qa reveal"><button>What forms of payment do you accept?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>We accept cash and major credit and debit cards. If you have a question about payment before you come in, just give us a call and we'll be glad to help.</p></div></div>
+      <div class="qa reveal"><button>Can I get a second opinion on a quote from another shop?<svg><use href="#i-chevron-down"/></svg></button><div class="ans"><p>Absolutely — and we encourage it. Bring in a quote from a dealer or chain and we'll take an honest look. Customers are often surprised how much they save without sacrificing quality work.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="pad area">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">Service Area</div>
+      <h2>Proudly Serving Greater Dayton</h2>
+      <p>Conveniently located on N Keowee Street — a short drive from across the area.</p>
+    </div>
+    <div class="grid">
+      <div class="map-card rl">
+        <iframe loading="lazy" title="Big Muffler Shop map" src="https://www.google.com/maps?q=829+N+Keowee+St,+Dayton,+OH+45404&output=embed"></iframe>
+      </div>
+      <div class="rr">
+        <div class="hoods">
+          <div class="hood"><b>Downtown Dayton</b><span><svg><use href="#i-clock"/></svg>4 min</span></div>
+          <div class="hood"><b>Old North Dayton</b><span><svg><use href="#i-clock"/></svg>3 min</span></div>
+          <div class="hood"><b>Riverside</b><span><svg><use href="#i-clock"/></svg>7 min</span></div>
+          <div class="hood"><b>Harrison Township</b><span><svg><use href="#i-clock"/></svg>8 min</span></div>
+          <div class="hood"><b>Kettering</b><span><svg><use href="#i-clock"/></svg>12 min</span></div>
+          <div class="hood"><b>Huber Heights</b><span><svg><use href="#i-clock"/></svg>14 min</span></div>
+          <div class="hood"><b>Trotwood</b><span><svg><use href="#i-clock"/></svg>13 min</span></div>
+          <div class="hood"><b>Vandalia</b><span><svg><use href="#i-clock"/></svg>15 min</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="ctaband">
+  <div class="wrap">
+    <h2>Hear a Rattle? Don't Wait.</h2>
+    <p>Call now for honest advice and a fair quote — most repairs done same day.</p>
+    <a class="bignum" href="tel:+19372226006"><svg><use href="#i-phone"/></svg>(937) 222-6006</a>
+    <small>Mon–Fri 8AM–5PM · Sat 8AM–3PM · 829 N Keowee St, Dayton, OH</small>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="tag">Get In Touch</div>
+      <h2>Stop By or Request a Callback</h2>
+      <p>Tell us about your vehicle and we'll get right back to you.</p>
+    </div>
+    <div class="grid">
+      <div class="hours-tbl rl">
+        <h3>Hours &amp; Location</h3>
+        <p class="sub">Walk-ins welcome during all open hours.</p>
+        <div class="hr" id="d-mon"><span>Monday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hr" id="d-tue"><span>Tuesday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hr" id="d-wed"><span>Wednesday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hr" id="d-thu"><span>Thursday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hr" id="d-fri"><span>Friday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hr" id="d-sat"><span>Saturday</span><span>8:00 AM – 3:00 PM</span></div>
+        <div class="hr" id="d-sun"><span>Sunday</span><span>Closed</span></div>
+        <div class="addr"><svg><use href="#i-pin"/></svg><span>829 N Keowee St, Dayton, OH 45404<br><a href="tel:+19372226006" style="color:#fff;font-weight:600">(937) 222-6006</a></span></div>
+      </div>
+      <form class="form rr" id="cbForm">
+        <h3>Request a Callback</h3>
+        <p>We'll reach out shortly during business hours.</p>
+        <div class="field"><label for="n">Your Name</label><input id="n" type="text" placeholder="Jane Smith" required></div>
+        <div class="field"><label for="p">Phone Number</label><input id="p" type="tel" placeholder="(937) 555-0123" required></div>
+        <div class="field"><label for="v">Vehicle (Year / Make / Model)</label><input id="v" type="text" placeholder="2015 Honda Accord"></div>
+        <div class="field"><label for="m">What's Going On?</label><textarea id="m" placeholder="Describe the noise or issue you're hearing..."></textarea></div>
+        <button type="submit" class="btn btn-primary"><svg><use href="#i-chat"/></svg>Request Callback</button>
+        <p class="note">Or call us directly at (937) 222-6006</p>
+        <div class="form-ok" id="ok">Thanks! This is a demo form — call (937) 222-6006 to reach the shop directly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="logo"><svg><use href="#i-wrench"/></svg></span>
+          <span class="brand-txt"><b>BIG MUFFLER SHOP</b><span>Dayton, Ohio</span></span>
+        </div>
+        <p>Honest exhaust, brake and auto repair for greater Dayton since 1976. Fair prices, quality work, no surprises.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Exhaust &amp; Mufflers</a>
+        <a href="#services">Brake Service</a>
+        <a href="#services">Suspension</a>
+        <a href="#services">Diagnostics</a>
+        <a href="#services">Maintenance</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Visit Us</h4>
+        <p>829 N Keowee St<br>Dayton, OH 45404</p>
+        <a href="tel:+19372226006">(937) 222-6006</a>
+        <p>Mon–Fri 8AM–5PM<br>Sat 8AM–3PM</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> Big Muffler Shop. All rights reserved.</span>
+      <span class="rate"><svg><use href="#i-star"/></svg>4.4★ from 237+ reviews</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// year
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// nav shadow
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+
+// mobile menu
+const mnav=document.getElementById('mnav');
+document.getElementById('menuBtn').onclick=()=>mnav.classList.add('show');
+document.getElementById('mClose').onclick=()=>mnav.classList.remove('show');
+mnav.querySelectorAll('a').forEach(a=>a.onclick=()=>mnav.classList.remove('show'));
+
+// highlight today's hours
+const days=['sun','mon','tue','wed','thu','fri','sat'];
+const td=document.getElementById('d-'+days[new Date().getDay()]);
+if(td)td.classList.add('today');
+
+// faq accordion
+document.querySelectorAll('.qa button').forEach(b=>{
+  b.onclick=()=>{
+    const qa=b.parentElement, ans=qa.querySelector('.ans'), open=qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(x=>{x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});
+    if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  };
+});
+
+// form
+document.getElementById('cbForm').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.querySelector('button').textContent='Request Sent';};
+
+// reveal observer
+const io=new IntersectionObserver((es)=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>io.observe(el));
+
+// counters
+const cio=new IntersectionObserver((es)=>{es.forEach(en=>{
+  if(!en.isIntersecting)return;
+  const el=en.target, target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||0);
+  let cur=0, step=target/60;
+  const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=dec?cur.toFixed(dec):Math.floor(cur);},22);
+  cio.unobserve(el);
+})},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
